@@ -9,7 +9,7 @@ namespace lap {
 template < typename... ObjT >
 struct _get_typename_impl;
 
-[[maybe_unused]] inline std::is_same< int, int > __no_used_ful;
+// std::is_same< int, int > __no_used_ful;
 
 } // namespace lap
 

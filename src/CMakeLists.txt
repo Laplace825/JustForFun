@@ -7,3 +7,4 @@ foreach(SOURCE ${SOURCES})
   log_info("${LOG_CAT} Adding executable: ${EXECUTABLE}")
   add_executable(${EXECUTABLE} ${SOURCE})
 endforeach()
+

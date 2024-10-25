@@ -1,8 +1,10 @@
 #include <algorithm>
 #include <numeric>
+#include <vector>
+
+#if __cplusplus >= 202002L
 #include <print>
 #include <ranges>
-#include <vector>
 
 template < typename U, typename Fn >
     requires std::regular_invocable< Fn, U& > && std::is_arithmetic_v< U >
@@ -46,3 +48,7 @@ int main() {
     std::for_each(v.begin(), v.end(), [](int x) { std::print("{} ", x); });
     std::println();
 }
+
+#else
+int main() { return 0; }
+#endif

@@ -28,10 +28,14 @@ struct _get_type_from_tempclass_impl< TemplateClass< ArgsT... > > {
 template < std::size_t N, typename TemplateClass >
 struct type_from_tempclass_at {
   private:
-    using _type = _get_type_from_tempclass_impl< TemplateClass >::tuple_type;
+    using _type = typename _get_type_from_tempclass_impl< TemplateClass >::tuple_type;
 
   public:
-    using type = std::tuple_element_t< N, _type >;
+#if __cplusplus >= 201703L
+    using type = typename std::tuple_element_t< N, _type >;
+#else
+    using type = typename std::tuple_element< N, _type >::type;
+#endif
 };
 
 #if __cplusplus >= 201703L
@@ -50,9 +54,15 @@ using type_from_tempclass_at_t =
 namespace lap {
 
 template < typename ObjT >
+#if __cplusplus >= 201703L
 consteval auto get_typename(ObjT&& _) {
+    return _get_typename_impl< std::decay_t< ObjT >,
+      std::integral_constant< bool, true > >::value;
+#else
+constexpr auto get_typename(ObjT&& _) {
     return _get_typename_impl< typename std::decay< ObjT >::type,
       std::integral_constant< bool, true > >::value;
+#endif
 }
 
 } // namespace lap
