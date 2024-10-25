@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# ===================================================== #
 # Build the project
 #
 # if the build directory does not exist, create it
+# ===================================================== #
 
 if [ ! -d "build" ]; then
   mkdir -p build
