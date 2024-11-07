@@ -26,7 +26,7 @@ int main() {
     std::iota(v.begin(), v.end(), 1);
 
     std::for_each(v.begin(), v.end(), [](int x) { std::print("{} ", x); });
-    std::println();
+    std::println("");
 
     /// @brief:
     /// we filter out even numbers, then we square them and take the first 3
@@ -46,9 +46,9 @@ int main() {
     }
 
     std::for_each(v.begin(), v.end(), [](int x) { std::print("{} ", x); });
-    std::println();
+    std::println("");
 }
 
 #else
-int main() { return 0; }
+int main() { return 1; }
 #endif

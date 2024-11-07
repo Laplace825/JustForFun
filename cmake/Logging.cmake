@@ -13,17 +13,17 @@ set(LOG_CAT "${LOG_PURPLE}ᓚᘏᗢ${LOG_RESET}")
 
 
 function(log_info msg)
-    message(STATUS "[${LOG_GREEN}INFO${LOG_RESET}] >>> ${msg}")
+    message(STATUS "[${LOG_GREEN}INFO${LOG_RESET}] >>> ${LOG_CAT} ${msg}")
 endfunction(log_info msg)
 
 function(log_warning msg)
-    message(WARNING "[WARNING] >>> ${msg}")
+    message(WARNING "[${LOG_YELLOW}WARNING${LOG_RESET}] >>> ${LOG_CAT} ${msg}")
 endfunction(log_warning msg)
 
 function(log_error msg)
-    message(SEND_ERROR "[ERROR] >>> ${msg}")
+    message(SEND_ERROR "[${LOG_RED}ERROR${LOG_RESET}] >>> ${LOG_CAT} ${msg}")
 endfunction(log_error msg)
 
 function(log_fatal msg)
-    message(FATAL_ERROR "[FATAL] >>> ${msg}")
+    message(FATAL_ERROR "[${LOG_RED}FATAL${LOG_RESET}] >>> ${LOG_CAT} ${msg}")
 endfunction(log_fatal msg)

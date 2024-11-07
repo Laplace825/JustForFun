@@ -17,7 +17,7 @@ struct _get_typename_impl;
     template < typename ObjT >                               \
     struct lap::_get_typename_impl< ObjT,                    \
       typename std::is_same< ObjT, decltype(obj) >::type > { \
-        static constexpr auto value = #obj_typename;         \
+        static constexpr const auto value = #obj_typename;   \
     };
 
 #define SET_TYPENAME(which, name) \

@@ -16,11 +16,11 @@ int main() {
     int16_t* ptr16 = reinterpret_cast< int16_t* >(ptr32);
     void* ptr_void = ptr16;
 
-    lap::println(lap::get_typename(integer));
-    lap::println(lap::get_typename(bob));
-    lap::println(lap::get_typename(ptr32));
-    lap::println(lap::get_typename(ptr16));
-    lap::println(lap::get_typename(ptr_void));
+    lap::println("{}", lap::get_typename(integer));
+    lap::println("{}", lap::get_typename(bob));
+    lap::println("{}", lap::get_typename(ptr32));
+    lap::println("{}", lap::get_typename(ptr16));
+    lap::println("{}", lap::get_typename(ptr_void));
 
     typename lap::type_from_tempclass_at< 0, std::vector< int > >::type
       another_integer = 1;

@@ -6,7 +6,7 @@
 
 #include <cstdint>
 
-#include "marco.h"
+#include "macro.h"
 
 SET_TYPENAME(double, fp64);
 SET_TYPENAME(float, fp32);

@@ -23,18 +23,21 @@ fi
 
 # if the build directory still does not exist, exit
 if [ ! -d "build" ]; then
-    echo_warning "Build directory STILL does not exist. Exiting."
+  echo_warning "Build directory STILL does not exist. Exiting."
   exit 1
 fi
 
 # if the build directory exists, run the project
-pushd ${PROJECT_ROOT_DIR}/bin > /dev/null
+pushd "${PROJECT_ROOT_DIR}/bin" >/dev/null || exit
 
 for file in $(/usr/bin/ls); do
-  if [ -x $file ]; then
+  if [ -x "$file" ]; then
     echo_info "Running $file"
-    ./$file
+    ./"${file}"
+    if [ ! $? ]; then
+      echo_warning "Error running $file, maybe C++20 not supported"
+    fi
   fi
 done
 
-popd > /dev/null
+popd >/dev/null || exit
