@@ -5,6 +5,8 @@
 
 namespace lap {
 
+namespace rust {
+
 template < typename VarT, typename Error >
 using Result = std::expected< VarT, Error >;
 
@@ -25,5 +27,17 @@ struct Err : private std::unexpected< ErrorT > {
 
 Err(const char*) -> Err< const std::string_view >;
 
-constexpr decltype(auto) Ok(auto&& ok) { return ok; }
+template < typename VarT >
+struct Ok {
+    constexpr Ok(VarT&& v) : ok(std::forward< VarT >(v)) {}
+
+    constexpr operator VarT() const { return ok; }
+
+  private:
+    const VarT& ok;
+};
+
+// constexpr decltype(auto) Ok(auto&& ok) { return ok; }
+
+} // namespace rust
 } // namespace lap

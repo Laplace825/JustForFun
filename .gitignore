@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+.Ds_Store
 bin/
 build/
 cmake-build/

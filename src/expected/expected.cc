@@ -4,9 +4,9 @@
 
 #include "rustlike/result.h"
 
-using lap::Result;
-using lap::Err;
-using lap::Ok;
+using lap::rust::Err;
+using lap::rust::Ok;
+using lap::rust::Result;
 
 enum class ErrorAlgorithm : int {
     DivisionByZero,

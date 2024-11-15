@@ -30,7 +30,7 @@ fi
 # if the build directory exists, run the project
 pushd "${PROJECT_ROOT_DIR}/bin" >/dev/null || exit
 
-for file in $(/usr/bin/ls); do
+for file in $(/bin/ls); do
   if [ -x "$file" ]; then
     echo_info "Running $file"
     ./"${file}"

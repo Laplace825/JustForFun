@@ -7,15 +7,15 @@
 #include <ranges>
 
 template < typename U, typename Fn >
-    requires std::regular_invocable< Fn, U& > && std::is_arithmetic_v< U >
-constexpr auto operator|(U u, const Fn& fn) {
+    requires std::regular_invocable< Fn, U & > && std::is_arithmetic_v< U >
+constexpr auto operator|(U u, const Fn &fn) {
     return fn(u);
 }
 
 int main() {
     using namespace std::literals;
 
-    constexpr auto power = []< typename ArgT >(ArgT& x) {
+    constexpr auto power = []< typename ArgT >(ArgT &x) {
         x *= x;
         return x;
     };
@@ -41,7 +41,7 @@ int main() {
                       return "The number is "s + std::to_string(x);
                   });
 
-    for (auto&& x : result) {
+    for (auto &&x : result) {
         std::println("{}", x);
     }
 
