@@ -31,5 +31,6 @@ int main() {
 
     typename lap::type_from_tempclass_at< 1, std::vector< int > >::type
       int_allocater;
+
     return 0;
 }

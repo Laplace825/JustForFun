@@ -4,6 +4,8 @@
 ///
 /// used to make get_typename work
 
+// #include <config.h>
+
 #include <cstdint>
 
 #include "macro.h"

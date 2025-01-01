@@ -1,5 +1,7 @@
 #pragma once
 
+#include <config.h>
+
 #include <type_traits>
 #ifndef LAP_MACRO_H
 #define LAP_MACRO_H

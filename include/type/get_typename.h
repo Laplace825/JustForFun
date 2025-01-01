@@ -1,5 +1,7 @@
 #pragma once
 
+#include <config.h>
+
 #include <tuple>
 #include <type_traits>
 
@@ -40,7 +42,7 @@ struct type_from_tempclass_at {
 #if __cplusplus >= 201703L
 
 template < std::size_t N, typename TemplateClass >
-using type_from_tempclass_at_t =
+_LAP using type_from_tempclass_at_t =
   typename type_from_tempclass_at< N, TemplateClass >::type;
 
 #endif
@@ -54,11 +56,11 @@ namespace lap {
 
 template < typename ObjT >
 #if __cplusplus >= 201703L
-consteval auto get_typename(ObjT&&) {
+_LAP consteval auto get_typename(ObjT&&) {
     return _get_typename_impl< std::decay_t< ObjT >,
       std::integral_constant< bool, true > >::value;
 #else
-constexpr auto get_typename(ObjT&&) {
+_LAP constexpr auto get_typename(ObjT&&) {
     return _get_typename_impl< typename std::decay< ObjT >::type,
       std::integral_constant< bool, true > >::value;
 #endif
