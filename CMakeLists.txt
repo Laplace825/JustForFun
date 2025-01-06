@@ -9,11 +9,12 @@ project(justforfun LANGUAGES CXX)
 set(PROJECT_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/Logging.cmake")
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/CompilerVersionCheck.cmake")
+# include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/AddSpdlog.cmake")
 configure_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.h.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/template/config.h.in"
   "${CMAKE_CURRENT_SOURCE_DIR}/include/config.h"
   @ONLY
 )
-set(EXECUTABLE_OUTPUT_PATH "${PROJECT_ROOT_DIR}/bin")
 
+set(EXECUTABLE_OUTPUT_PATH "${PROJECT_ROOT_DIR}/bin")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src")

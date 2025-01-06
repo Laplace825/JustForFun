@@ -5,10 +5,10 @@
 #include <cstdlib>
 
 #include "my_print/my_print.h"
+#include "timer/timer.h"
 
 int main() {
     using lap::DaABpbC_unroll;
-    using namespace std::ranges;
 
     // 32x64
     std::array< double, 32 * 64 > A{0};
@@ -26,7 +26,10 @@ int main() {
     std::ranges::for_each(
       C, [](double& c) { c = std::rand() % 10 + (std::rand() % 10) * 0.1; });
 
-    DaABpbC_unroll< 32, 64, 20 >(1.2, A.data(), B.data(), 1.0, C.data());
+    {
+        lap::TimerRAII t{};
+        DaABpbC_unroll< 32, 64, 20 >(1.2, A.data(), B.data(), 1.0, C.data());
+    }
 
     std::ranges::for_each(
       C, [](const double& c) { lap::println("{:.2f}", c); });
