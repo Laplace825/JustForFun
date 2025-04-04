@@ -11,8 +11,6 @@ namespace lap {
 template < typename... ObjT >
 struct _get_typename_impl;
 
-// std::is_same< int, int > __no_used_ful;
-
 } // namespace lap
 
 #define _SET_TYPENAME_IMPL(obj, obj_typename)                \

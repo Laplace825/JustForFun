@@ -10,29 +10,29 @@
 
 #include "macro.h"
 
-SET_TYPENAME(double, fp64);
-SET_TYPENAME(float, fp32);
-SET_TYPENAME(int8_t, int8);
-SET_TYPENAME(char, int8);
-SET_TYPENAME(int16_t, int16);
-SET_TYPENAME(int32_t, int32);
-SET_TYPENAME(int64_t, int64);
+SET_TYPENAME(double, f64);
+SET_TYPENAME(float, f32);
+SET_TYPENAME(int8_t, i8);
+SET_TYPENAME(char, i8);
+SET_TYPENAME(int16_t, i16);
+SET_TYPENAME(int32_t, i32);
+SET_TYPENAME(int64_t, i64);
 
-SET_TYPENAME(uint8_t, uint8);
-SET_TYPENAME(uint16_t, uint16);
-SET_TYPENAME(uint32_t, uint32);
-SET_TYPENAME(uint64_t, uint64);
+SET_TYPENAME(uint8_t, u8);
+SET_TYPENAME(uint16_t, u16);
+SET_TYPENAME(uint32_t, u32);
+SET_TYPENAME(uint64_t, u64);
 
 SET_TYPENAME(void*, void_ptr);
-SET_TYPENAME(double*, fp64_ptr);
-SET_TYPENAME(float*, fp32_ptr);
-SET_TYPENAME(int8_t*, int8_ptr);
-SET_TYPENAME(char*, int8_ptr);
-SET_TYPENAME(int16_t*, int16_ptr);
-SET_TYPENAME(int32_t*, int32_ptr);
-SET_TYPENAME(int64_t*, int64_ptr);
+SET_TYPENAME(double*, f64_ptr);
+SET_TYPENAME(float*, f32_ptr);
+SET_TYPENAME(int8_t*, i8_ptr);
+SET_TYPENAME(char*, i8_ptr);
+SET_TYPENAME(int16_t*, i16_ptr);
+SET_TYPENAME(int32_t*, i32_ptr);
+SET_TYPENAME(int64_t*, i64_ptr);
 
-SET_TYPENAME(uint8_t*, int8_ptr);
-SET_TYPENAME(uint16_t*, int16_ptr);
-SET_TYPENAME(uint32_t*, int32_ptr);
-SET_TYPENAME(uint64_t*, int64_ptr);
+SET_TYPENAME(uint8_t*, i8_ptr);
+SET_TYPENAME(uint16_t*, i16_ptr);
+SET_TYPENAME(uint32_t*, i32_ptr);
+SET_TYPENAME(uint64_t*, i64_ptr);

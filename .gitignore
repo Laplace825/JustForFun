@@ -36,3 +36,5 @@ build/
 cmake-build/
 .cache/
 .vscode/
+
+__cmake_systeminformation/

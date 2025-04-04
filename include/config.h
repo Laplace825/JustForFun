@@ -3,3 +3,4 @@
 
 // Define the macro in this header
 #define _LAP __attribute__((noinline))
+#define BUILD_TYPE "Release"

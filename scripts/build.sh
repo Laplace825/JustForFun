@@ -10,9 +10,13 @@ if [ ! -d "build" ]; then
   mkdir -p build
 fi
 
+<<<<<<< Updated upstream
 cmake -S . -B build -G Ninja \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
   -DCMAKE_CXX_FLAGS="-std=c++2c -stdlib=libc++ -Wall -Wextra -Werror -Wno-unused-variable -O3 -fopenmp"
 
+=======
+cmake -S . -B build -G Ninja "$@"
+>>>>>>> Stashed changes
 ninja -C build -j 8 -v
